@@ -1,0 +1,23 @@
+body {
+  background: #f1f1f1;
+}
+
+h2 {
+  margin-top: 20px;
+  margin: 20px
+}
+
+.cow-list-entry {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cow-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cow-spotlight {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
