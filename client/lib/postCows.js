@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-var addACow = (theCow, callback) => {
+var postACow = (theCow, callback) => {
   $.ajax({
     url: 'http://127.0.0.1:8080/api/cows',
     type: 'POST',
@@ -11,4 +11,4 @@ var addACow = (theCow, callback) => {
   });
 };
 
-export default addACow;
+export default postACow;
