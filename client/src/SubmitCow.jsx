@@ -29,9 +29,8 @@ class SubmitCow extends React.Component {
     var newCow = {
       name: this.state.nameInput,
       description: this.state.descriptionInput
-    }
-    console.log('new cow', newCow)
-    this.props.addCow(newCow)
+    };
+    this.props.addCow(newCow);
   }
 
 
@@ -42,8 +41,8 @@ class SubmitCow extends React.Component {
         <div>Name:</div>
         <input className="input-cow-name" type="text" onChange={(event) => this.handleNameChange(event.target.value)}/>
         <div>Description:</div>
-        <input className="input-cow-description" type="text" onChange={(event) => this.handleDescriptionChange(event.target.value)}/>
-        <button className="btn hidden-sm-down" onClick={() => this.handleSubmit()}>
+        <textarea className="input-cow-description" type="text" onChange={(event) => this.handleDescriptionChange(event.target.value)}/>
+        <button className="button-submit-cow" onClick={() => this.handleSubmit()}>
           SUBMIT!
           </button>
       </div>

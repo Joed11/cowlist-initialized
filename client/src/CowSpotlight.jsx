@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 var CowSpotlight = function(props) {
-  console.log(props)
   if (props.cow) {
   return (
       <div className="cow-spotlight">
@@ -11,7 +10,7 @@ var CowSpotlight = function(props) {
       </div>
     );
   } else {
-    return <div className="cow-spotlight">No Cow Selected</div>
+    return <div className="cow-spotlight">PICK A COW!</div>
   }
 }
 
