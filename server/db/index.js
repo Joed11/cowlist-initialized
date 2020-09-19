@@ -12,11 +12,6 @@ db
     console.log('Unable to connect to the database:', err);
   });
 
-
-
-//db methods
-
-
 var Cows = db.define('cows', {
   id: {
     type: Sequelize.INTEGER,
@@ -31,18 +26,10 @@ var Cows = db.define('cows', {
   description: {
     type: Sequelize.STRING,
     allowNull: false,
-    unique: true
+    unique: false
   }
 });
 
 Cows.sync({ alter: true });
 
 exports.Cows = Cows;
-
-
-
-//write record
-
-//get all records
-
-//get one record
