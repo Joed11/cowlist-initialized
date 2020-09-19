@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CowList from './CowList'
-import CowSpotlight from './CowSpotlight'
-import SubmitCow from './SubmitCow'
-import exampleCowList from '../../server/db/exampleCowData.js'
-import addACow from '../lib/addCows.js'
-import getAllCows from '../lib/getCows.js'
+import CowList from './CowList';
+import CowSpotlight from './CowSpotlight';
+import SubmitCow from './SubmitCow';
+import exampleCowList from '../../server/db/exampleCowData.js';
+import postACow from '../lib/postCows.js';
+import getAllCows from '../lib/getCows.js';
 import $ from "jquery";
 
 class App extends React.Component {
@@ -22,9 +22,8 @@ class App extends React.Component {
     this.refreshCows();
   }
 
-  addCow(newCow) {
-    addACow(newCow, (response) => {
-      console.log('You maybe posted a cow', response)
+  postCow(newCow) {
+    postACow(newCow, (response) => {
       this.refreshCows();
     })
   }
@@ -39,22 +38,20 @@ class App extends React.Component {
   }
 
   changeCurrentCow(targetCow) {
-    console.log('changing the cow')
     this.setState({
       currentCow: targetCow
     })
   }
 
-  deleteCow() {
+  // deleteCow() {
 
-  }
+  // }
 
   render() {
     return (
       <div>
-        <h2>Cow List Exercise</h2>
-        <SubmitCow addCow={this.addCow.bind(this)}/>
         <CowSpotlight cow={this.state.currentCow}/>
+        <SubmitCow addCow={this.postCow.bind(this)}/>
         <CowList cows={this.state.cowList} changeCow={this.changeCurrentCow.bind(this)}/>
       </div>
     );
